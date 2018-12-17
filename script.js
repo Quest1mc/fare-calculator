@@ -44,7 +44,7 @@ var TotalFare = Base+ (CostPerMinute* RideTime) + (CostPerMile*RideDistance)+ Bo
 console.log (TotalFare);
 
 if (TotalFare < MinimumFare ) {
-    return MinimumFare;
+    console.log( MinimumFare);
 } else{
-    return TotalFare;
+    console.log( TotalFare);
 }
