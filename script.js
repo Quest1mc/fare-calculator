@@ -57,4 +57,4 @@ console.log(MinFare());
 // add input fields for all possible variables that user has to add 
 // and subsittute those variables in your function 
 // add type of ride minimum costs. i.e. suv black van 
-
+// add surge  and refine the algorithm - GO BACK TO THE USER STORY !
