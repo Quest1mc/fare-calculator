@@ -40,11 +40,19 @@ var BookingFee = 1;
 var MinimumFare= 4;
 var RideTime = 10;
 var RideDistance = 5;
-var TotalFare = Base+ (CostPerMinute* RideTime) + (CostPerMile*RideDistance)+ BookingFee;
+var TotalFare =  Base + (CostPerMinute* RideTime) + (CostPerMile*RideDistance)+ BookingFee;
 console.log (TotalFare);
 
-if (TotalFare < MinimumFare ) {
-    console.log( MinimumFare);
+function MinFare(){if (TotalFare < MinimumFare ) {
+    TotalFare = MinimumFare;
+    return TotalFare;
 } else{
-    console.log( TotalFare);
+    return TotalFare;
 }
+};
+
+console.log(MinFare());
+
+// to do *********************
+// add input fields for all possible variables that user has to add 
+// and subsittute those variables in your function 

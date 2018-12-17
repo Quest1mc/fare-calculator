@@ -18,26 +18,27 @@
         <![endif]-->
         
         <h1> Fare Calculator </h1>
-        <p> Your Uber fare is first calculated on 4 main criteria:<br>
-              • Base (or initial) fare – A flat fee charged at the beginning of every ride<br>
-              • Cost per minute – How much you are charged for each minute you are inside the ride<br>
-              • Cost per mile – How much you are charged for each mile of the ride<br>
-              • Booking Fee (Formerly ‘Safe Rides Fee’) – A flat fee to cover Uber’s ‘operating costs’ <br>
-              (Not included for Uber’s more luxury services like UberBlack or UberSUV)<br>
-             Here’s how Uber uses the 4 main criteria above to calculate your fare:<br>
-             Base Fare + (Cost per minute * time in ride) + (Cost per mile * ride distance) + Booking Fee = Your Fare</p>
+            <p> Your Uber fare is first calculated on 4 main criteria:<br>
+                • Base (or initial) fare – A flat fee charged at the beginning of every ride<br>
+                • Cost per minute – How much you are charged for each minute you are inside the ride<br>
+                • Cost per mile – How much you are charged for each mile of the ride<br>
+                • Booking Fee (Formerly ‘Safe Rides Fee’) – A flat fee to cover Uber’s ‘operating costs’ <br>
+                (Not included for Uber’s more luxury services like UberBlack or UberSUV)<br>
+                Here’s how Uber uses the 4 main criteria above to calculate your fare:<br>
+                Base Fare + (Cost per minute * time in ride) + (Cost per mile * ride distance) + Booking Fee = Your Fare</p>
 
 
              <h2>fare Calculator </h2>
-             <form>
-             <p>Please put in what you know about your ride to the best of your knowledge </p>
-            Start<input type="place" start="Where you started?" value="home"><br>
-            End<input type= "place" destination = "Where you finished?" value="Central Station"><br>
-            Duration<input type = "number" RideTime =" how many minutes the ride took? " value = "15"> <br>
-            Cost per minute <input type = "number" CostPerMinute= " CostPerMinute" value = 0.20 ><br>
-            Cost per mile <input type = "number" CostPerMile= " CostPerMile" value = 1.10 ><br>
-            Ride Type<input> which type of  ride aka BLACK , XL VAN Or SUV <br>
-            <button>submit</button>
+             <!-- A form to allow the user to set the parameters for the calculation -->
+            <form>
+                <p>Please put in what you know about your ride to the best of your knowledge </p>
+                Start<input type="place" start="Where you started?" value="home"><br>
+                End<input type= "place" destination = "Where you finished?" value="Central Station"><br>
+                Duration<input type = "number" RideTime =" how many minutes the ride took? " value = "15"> <br>
+                Cost per minute <input type = "number" CostPerMinute= " CostPerMinute" value = 0.20 ><br>
+                Cost per mile <input type = "number" CostPerMile= " CostPerMile" value = 1.10 ><br>
+                Ride Type<input> which type of  ride aka BLACK , XL VAN Or SUV <br>
+                <button>submit</button>
             </form>
 
 
