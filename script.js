@@ -9,26 +9,7 @@
 //variables needed :
 // var Base,CostPerMinute,CostPerMile,BookingFee,RideTime,RideDistance,TotalFare, MinimumFare;
 
-// Base = 1;
-// CostPerMinute = 0.20;
-// CostPerMile = 1.10;
-// BookingFee = 1;
-// MinimumFare= 4;
-// RideTime= function getRidetime(){ 
-//     // this is not expected to work yet due to scoping it is a simple a placeholder to be cleaned up when the proper place for the function is arrived at 
-//     // this function is going to be an async function that gets the total amount of time it took to complete the ride
-//     return 2; };
-// RideDistance = function getRideDistance(){ 
-//     // this is not expected to work yet due to scoping it is a simple a placeholder to be cleaned up when the proper place for the function is arrived at 
-//     // this function will be an async function that returns the total distance covered from beginning to completion of a ride.
-//     return 5 ;};
 
-
-// function fareCalc (){
-//     //Base Fare + (Cost per minute * time in ride) + (Cost per mile * ride distance) + Booking Fee = Your Fare
-//    return TotalFare = Base+ (CostPerMinute* RideTime) + (CostPerMile*RideDistance)+ BookingFee;
-// }
-// console.log(fareCalc());
 
 
 //************************  attempt 2 since attempt one seems unneccesarily complicated :)
@@ -41,20 +22,38 @@ var MinimumFare= 4;
 var RideTime = 10;
 var RideDistance = 5;
 var TotalFare =  Base + (CostPerMinute* RideTime) + (CostPerMile*RideDistance)+ BookingFee;
+var surgePeriod = true;
 console.log (TotalFare);
 
 function MinFare(){if (TotalFare < MinimumFare ) {
     TotalFare = MinimumFare;
+    console.log ( " this is the minimum fare");
     return TotalFare;
+    
 } else{
+    console.log(' this is the else part of that statement');
     return TotalFare;
 }
-};
+}
 
 console.log(MinFare());
+
+// surge pricing - YAAY IT WORKS !!!
+// this is 2 x the normal fair during busy periods 
+
+function surgeFare(TotalFare){
+    if (surgePeriod)
+    {
+     return TotalFare = TotalFare*2;
+}
+    } 
+console.log(surgeFare(TotalFare));
+
 
 // to do *********************
 // add input fields for all possible variables that user has to add 
 // and subsittute those variables in your function 
 // add type of ride minimum costs. i.e. suv black van 
 // add surge  and refine the algorithm - GO BACK TO THE USER STORY !
+// eventually use google matrix api to calculate distances https://developers.google.com/maps/documentation/distance-matrix/intro
+
