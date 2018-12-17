@@ -7,7 +7,20 @@
 // Base Fare + (Cost per minute * time in ride) + (Cost per mile * ride distance) + Booking Fee = Your Fare
 
 //variables needed :
-var Base,CostPerMinute,CostPerMile,BookingFee,RideTime,RideDistance,TotalFare;
+var Base,CostPerMinute,CostPerMile,BookingFee,RideTime,RideDistance,TotalFare, MinimumFare;
+
+Base = 1;
+CostPerMinute = 0.20;
+CostPerMile = 1.10;
+BookingFee = 1;
+MinimumFare= 4;
+RideTime= function getRidetime(){ 
+    // this function is going to be an async function that gets the total amount of time it took to complete the ride
+    return 2; };
+RideDistance = function getRideDistance(){ 
+    // this fucntion will be an async function that returns the total distance covered from beginning to completion of a ride.
+    return 5 ;};
+
 
 function fareCalc (){
     //Base Fare + (Cost per minute * time in ride) + (Cost per mile * ride distance) + Booking Fee = Your Fare
