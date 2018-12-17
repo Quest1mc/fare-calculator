@@ -15,14 +15,17 @@ CostPerMile = 1.10;
 BookingFee = 1;
 MinimumFare= 4;
 RideTime= function getRidetime(){ 
+    // this is not expected to work yet due to scoping it is a simple a placeholder to be cleaned up when the proper place for the function is arrived at 
     // this function is going to be an async function that gets the total amount of time it took to complete the ride
     return 2; };
 RideDistance = function getRideDistance(){ 
-    // this fucntion will be an async function that returns the total distance covered from beginning to completion of a ride.
+    // this is not expected to work yet due to scoping it is a simple a placeholder to be cleaned up when the proper place for the function is arrived at 
+    // this function will be an async function that returns the total distance covered from beginning to completion of a ride.
     return 5 ;};
 
 
 function fareCalc (){
     //Base Fare + (Cost per minute * time in ride) + (Cost per mile * ride distance) + Booking Fee = Your Fare
-   return TotalFare = Base+ (CostPerMinute *RideTime) + (CostPerMile*RideDistance)+ BookingFee;
+   return TotalFare = Base+ (CostPerMinute* RideTime) + (CostPerMile*RideDistance)+ BookingFee;
 }
+console.log(fareCalc());
