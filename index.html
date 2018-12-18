@@ -37,10 +37,16 @@
                 Duration<input type = "number" RideTime =" how many minutes the ride took? " value = "15"> <br>
                 Cost per minute <input type = "number" CostPerMinute= " CostPerMinute" value = 0.20 ><br>
                 Cost per mile <input type = "number" CostPerMile= " CostPerMile" value = 1.10 ><br>
-                Ride Type<input> which type of  ride aka BLACK , XL VAN Or SUV <br>
+                
+                Ride Type<input type="radio" name="cartype" value="Normal"> Normal<br>
+                Ride Type<input type="radio" name="cartype" value="Black"> Black<br>
+                Ride Type<input type="radio" name="cartype" value="XL"> XL <br>
+                Ride Type<input type="radio" name="cartype" value="VAN"> VAN<br>
+                Ride Type<input type="radio" name="cartype" value="SUV"> SUV<br>
+               
                 <button>submit</button>
             </form>
-
+           <h2> Your Fare is </h2> <h2> ${TotalFare}</h2>
 
         <script src="script.js" async defer></script>
     </body>
