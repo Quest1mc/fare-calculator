@@ -14,32 +14,43 @@
 
 //************************  attempt 2 since attempt one seems unneccesarily complicated :)
 
-var base = document.getElementById('Base').value;
-var costPerMinute =document.getElementById('CostPerMinute').value;
-var costPerMile =document.getElementById('CostPerMile').value;
-var bookingFee = 1;
-var minimumFare= 4;
-var rideTime = document.getElementById('RideTime').value;
-var rideDistance = document.getElementById('RideDistance').value;
+// var base = document.getElementById('Base').value;
+// var costPerMinute =document.getElementById('CostPerMinute').value;
+// var costPerMile =document.getElementById('CostPerMile').value;
+// var bookingFee = 1;
+var minimumFare = 4;
+// var rideTime = document.getElementById('RideTime').value;
+// var rideDistance = document.getElementById('RideDistance').value;
 var surgePeriod = document.getElementById('SurgePeriod').value;
-var totalFareFinal = 0;
+// var totalFareFinal = 0;
 
-function totalFare(){  return base + (costPerMinute* rideTime) + (costPerMile*rideDistance) + bookingFee;
- }
+function totalFare() {
+    base = document.getElementById('Base').value,
+        costPerMinute = document.getElementById('CostPerMinute').value,
+        costPerMile = document.getElementById('CostPerMile').value,
+        bookingFee = 1,
+        rideTime = document.getElementById('RideTime').value,
+        rideDistance = document.getElementById('RideDistance').value;
+
+
+    return base + (costPerMinute * rideTime) + (costPerMile * rideDistance) + bookingFee;
+}
 //this console.log works 
 //console.log (totalFare());
 
-function minFare(){if (totalFare ()< minimumFare ) {
-    totalFareFinal = minimumFare;
-    console.log ( totalFareFinal);
-    return totalFareFinal;
-    
-} else{
-    console.log(' this is the else part of that statement');
-    return totalFareFinal = totalFare() ;
+function minFare() {
+    if (totalFare() < minimumFare) {
+        totalFareFinal = minimumFare;
+        console.log(totalFareFinal);
+        return totalFareFinal;
+
+    } else {
+        console.log(' this is the else part of that statement');
+        return totalFareFinal = totalFare();
+    }
 }
-}
-function rideType (){
+
+function rideType() {
     // if statement that returns a new value based on ride type 
 }
 
@@ -48,12 +59,12 @@ console.log(minFare());
 // surge pricing - YAAY IT WORKS !!!
 // this is 2 x the normal fair during busy periods 
 
-function surgeFare(totalFareFinal){
-    if (surgePeriod)
-    {
-     return totalFareFinal = totalFare()*2;
+function surgeFare(totalFareFinal) {
+    if (surgePeriod) {
+        surgePeriod = document.getElementById('SurgePeriod').value;
+        return totalFareFinal = totalFare() * 2;
+    }
 }
-    } 
 console.log(surgeFare(totalFareFinal));
 //console.log (TotalFare + '2nd');
 //document.getElementById("Totalfare").innerText(TotalFare);
@@ -66,4 +77,3 @@ document.querySelector('#fareAmount').innerText = totalFareFinal;
 // add type of ride minimum costs. i.e. suv black van 
 // add surge  and refine the algorithm - GO BACK TO THE USER STORY !
 // eventually use google matrix api to calculate distances https://developers.google.com/maps/documentation/distance-matrix/intro
-
