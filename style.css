@@ -1,0 +1,98 @@
+h1 {
+    background-color: dodgerblue;
+    color: white;
+    margin: 0px;
+    text-align: center;
+    font-size: 15vh;
+    padding: 10px;
+}
+h2 {
+    
+    color: white;
+    margin: 0px;
+    text-align: center;
+    font-size: 15vh;
+    padding: 10px;
+}
+
+h3 {
+    margin-left: 20%;
+    font-size: 30px;
+}
+
+body {
+    margin: 0px;
+    background-color:#c4b583;
+}
+.calc{
+    margin-left: 20%;
+    font-size: 30px;
+    color: white;
+}
+
+footer {
+    text-align: center;
+}
+
+h4 {
+    background-color: red; 
+}
+
+.background-yellow {
+    background-color: #FEDC25; 
+}
+
+.background-blue {
+    background-color: #1E90FF;
+}
+
+.background-green {
+    background-color: #80C683;
+}
+
+.background-orange {
+    background-color: #F1662B;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 24px;
+    box-shadow: 2px 4px black;
+    display: inline-block;
+    font-style: italic;
+}
+
+.answers {
+    margin: auto;
+}
+
+.question {
+    width: 80vw;
+    margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 4em;
+    }
+    .answers {
+        width: 100vw;
+    }
+
+    .card {
+        width: 90vw;    
+        margin: 5px 0px 5px 0px;
+        border-radius: 0px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .answers {
+        width: 80vw;
+    }
+
+    .card {
+        width: 30vw;    
+    }
+}

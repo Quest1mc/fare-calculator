@@ -14,40 +14,50 @@
 
 //************************  attempt 2 since attempt one seems unneccesarily complicated :)
 
-var Base = 1;
-var CostPerMinute = 0.20;
-var CostPerMile = 1.10;
-var BookingFee = 1;
-var MinimumFare= 4;
-var RideTime = 10;
-var RideDistance = 5;
-var TotalFare =  Base + (CostPerMinute* RideTime) + (CostPerMile*RideDistance)+ BookingFee;
-var surgePeriod = true;
-console.log (TotalFare);
+var base = document.getElementById('Base').value;
+var costPerMinute =document.getElementById('CostPerMinute').value;
+var costPerMile =document.getElementById('CostPerMile').value;
+var bookingFee = 1;
+var minimumFare= 4;
+var rideTime = document.getElementById('RideTime').value;
+var rideDistance = document.getElementById('RideDistance').value;
+var surgePeriod = document.getElementById('SurgePeriod').value;
+var totalFareFinal = 0;
 
-function MinFare(){if (TotalFare < MinimumFare ) {
-    TotalFare = MinimumFare;
-    console.log ( " this is the minimum fare");
-    return TotalFare;
+function totalFare(){  return base + (costPerMinute* rideTime) + (costPerMile*rideDistance) + bookingFee;
+ }
+//this console.log works 
+//console.log (totalFare());
+
+function minFare(){if (totalFare ()< minimumFare ) {
+    totalFareFinal = minimumFare;
+    console.log ( totalFareFinal);
+    return totalFareFinal;
     
 } else{
     console.log(' this is the else part of that statement');
-    return TotalFare;
+    return totalFareFinal = totalFare() ;
 }
+}
+function rideType (){
+    // if statement that returns a new value based on ride type 
 }
 
-console.log(MinFare());
+console.log(minFare());
 
 // surge pricing - YAAY IT WORKS !!!
 // this is 2 x the normal fair during busy periods 
 
-function surgeFare(TotalFare){
+function surgeFare(totalFareFinal){
     if (surgePeriod)
     {
-     return TotalFare = TotalFare*2;
+     return totalFareFinal = totalFare()*2;
 }
     } 
-console.log(surgeFare(TotalFare));
+console.log(surgeFare(totalFareFinal));
+//console.log (TotalFare + '2nd');
+//document.getElementById("Totalfare").innerText(TotalFare);
+document.querySelector('#fareAmount').innerText = totalFareFinal;
 
 
 // to do *********************
