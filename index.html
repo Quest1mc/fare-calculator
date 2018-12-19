@@ -35,12 +35,12 @@
              <!-- This is where the parameters of the algorithym will be inserted  -->
             <div class="calc">
                 <p>Please put in what you know about your ride to the best of your knowledge </p>
-                Base <input type = "number" id="Base" value = 0><br>
-                Distance in miles<input type="number" id="RideDistance" value= 00.00><br>
-                Duration<input type = "number" id="RideTime" value = 0.00> <br>
-                Cost per minute <input type = "number" id= "CostPerMinute" value = 00.00 ><br>
-                Cost per mile <input type = "number" id= "CostPerMile" value = 00.00 ><br>
-                Surge Period ? <input type ="checkbox" id="SurgePeriod" value = false> <br>
+                Base <input type = "number" id="Base" min="0" value="0" step=".01" value = 0><br>
+                Distance in miles<input type="number" id="RideDistance"min="0" value="0" step=".01" value= 00.00><br>
+                Duration<input type = "number" id="RideTime"min="0" value="0" step=".01" value = 0.00> <br>
+                Cost per minute <input type = "number" id= "CostPerMinute"min="0" value="0" step=".01" value = 00.00 ><br>
+                Cost per mile <input type = "number" id= "CostPerMile"min="0" value="0" step=".01" value = 00.00 ><br>
+                Surge Period ? <input type ="checkbox" id="SurgePeriod" min="0" value="0" step=".01"value = false> <br>
                 
                 Ride Type<input type="radio" name="cartype" value="Normal"> Normal<br>
                 Ride Type<input type="radio" name="cartype" value="Black"> Black<br>
