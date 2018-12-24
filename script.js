@@ -15,11 +15,11 @@
 //************************  attempt 2 since attempt one seems unneccesarily complicated :)
 
 var minimumFare = 4;
+var carType = "normal";
 
 
 
 
-// This function works  no longer works  it does not do math instead it concatenates the values :(
 function totalFare() {
     var base = parseInt(document.getElementById('Base').value);
     var costPerMinute = parseInt(document.getElementById('CostPerMinute').value);
@@ -27,37 +27,39 @@ function totalFare() {
     var bookingFee = 1;
     var rideTime = parseInt(document.getElementById('RideTime').value);
     var rideDistance = parseInt(document.getElementById('RideDistance').value);
+    
 
     // console.log(typeof base, typeof costPerMile, typeof costPerMinute, typeof rideDistance, typeof rideTime)
 
-    var totalFareSum = base + (costPerMinute * rideTime) + (costPerMile * rideDistance) + bookingFee;
-    // console.log(typeof totalFareSum); // string
-
+    var totalFareSum = (base + (costPerMinute * rideTime) + (costPerMile * rideDistance) + bookingFee);
+    console.log(typeof totalFareSum); // number
+    console.log(totalFareSum);
 
     return totalFareSum; 
 }
 
 var totalFareSum = totalFare();
 
-console.log(totalFareSum);
 
 function minFare() {
+   
     if (totalFareSum < minimumFare) {
         totalFareFinal = minimumFare;
-        console.log('this is minFare function working');
+        console.log('this is the if part of minFare');
         return totalFareFinal;
 
     } else {
-        console.log(' this is the else part of that statement');
-        return totalFareFinal = totalFare();
+        console.log(totalFareFinal,minimumFare);
+        return totalFareFinal;
     }
 }
 
 var totalFareFinal = minFare();
+console.log( typeof totalFareFinal);
 
 function rideType() {
     //*NOTYET working if statement that returns a new value based on ride type 
-    if (normal){
+    if (carType === "normal"){
         return totalFareFinal+ 1;
     }
     else { 
@@ -69,9 +71,10 @@ function rideType() {
 
 // surge pricing - YAAY IT WORKS !!!
 // this is 2 x the normal fair during busy periods 
-SurgePeriod.addEventListener('change', function () {
+function surge () {
+    SurgePeriod.addEventListener('change', function () {
     if (this.checked) {
-        totalFareFinal = totalFare() * 2,
+        totalFareFinal = totalFare() * 2;
             console.log('true');
         return totalFareFinal;
         // Checkbox is checked..
@@ -81,6 +84,7 @@ SurgePeriod.addEventListener('change', function () {
         return totalFareFinal;
     }
 });
+}
 
 
 
@@ -103,11 +107,20 @@ function fareAmount() {
 
 function calculateAndDisplayTotalFare(){
     // calculate total fare (without modifiers)
-    var totalFareSum = totalFare() 
-    // apply surge
-    var totalFareAndSurge = totalFareSum * surgeMultiplier()
-    // apply ridetype
+    totalFare();
+    console.log(totalFareSum);
     // check if it's below a certain value => minimumfare
+    minFare();
+    console.log(totalFareFinal);
+    
+    // apply surge
+    surge();
+    console.log(surge());
+    // apply ridetype
+    rideType();
+    console.log (rideType());
+    
     
     // display on the page
+    fareAmount();
 }
