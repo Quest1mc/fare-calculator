@@ -21,12 +21,12 @@ var carType = "normal";
 
 
 function totalFare() {
-    var base = parseInt(document.getElementById('Base').value);
-    var costPerMinute = parseInt(document.getElementById('CostPerMinute').value);
-    var costPerMile = parseInt(document.getElementById('CostPerMile').value);
+    var base = parseFloat(document.getElementById('Base').value);
+    var costPerMinute = parseFloat(document.getElementById('CostPerMinute').value);
+    var costPerMile = parseFloat(document.getElementById('CostPerMile').value);
     var bookingFee = 1;
-    var rideTime = parseInt(document.getElementById('RideTime').value);
-    var rideDistance = parseInt(document.getElementById('RideDistance').value);
+    var rideTime = parseFloat(document.getElementById('RideTime').value);
+    var rideDistance = parseFloat(document.getElementById('RideDistance').value);
     
 
     // console.log(typeof base, typeof costPerMile, typeof costPerMinute, typeof rideDistance, typeof rideTime)
@@ -40,22 +40,24 @@ function totalFare() {
 
 var totalFareSum = totalFare();
 
+console.log(totalFareSum);
+var totalFareFinal = 0;
 
 function minFare() {
-   
-    if (totalFareSum < minimumFare) {
-        totalFareFinal = minimumFare;
-        console.log('this is the if part of minFare');
-        return totalFareFinal;
+    
+   if (totalFare() >= minimumFare) {
+    //totalFareSum > minimumFare
 
+        console.log(totalFare()+ ' is greater than ' + minimumFare);
+         return totalFareFinal = totalFareSum;
     } else {
-        console.log(totalFareFinal,minimumFare);
-        return totalFareFinal;
+        console.log(totalFare() + ' is less than '+ minimumFare);
+        return  totalFareFinal = minimumFare;
     }
 }
-
+console.log( totalFareFinal);
 var totalFareFinal = minFare();
-console.log( typeof totalFareFinal);
+console.log( totalFareFinal);
 
 function rideType() {
     //*NOTYET working if statement that returns a new value based on ride type 
