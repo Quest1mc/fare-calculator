@@ -15,7 +15,8 @@
 //************************  attempt 2 since attempt one seems unneccesarily complicated :)
 
 var minimumFare = 4;
-var carType = "normal";
+//var carType = "normal";
+var totalFareFinal = 0;
 
 
 
@@ -27,7 +28,7 @@ function totalFare() {
     var bookingFee = 1;
     var rideTime = parseFloat(document.getElementById('RideTime').value);
     var rideDistance = parseFloat(document.getElementById('RideDistance').value);
-    
+
 
     // console.log(typeof base, typeof costPerMile, typeof costPerMinute, typeof rideDistance, typeof rideTime)
 
@@ -35,94 +36,103 @@ function totalFare() {
     console.log(typeof totalFareSum); // number
     console.log(totalFareSum);
 
-    return totalFareSum; 
+    return totalFareSum;
 }
 
 var totalFareSum = totalFare();
 
-console.log(totalFareSum);
+
 var totalFareFinal = 0;
 
 function minFare() {
-    
-   if (totalFare() >= minimumFare) {
-    //totalFareSum > minimumFare
 
-        console.log(totalFare()+ ' is greater than ' + minimumFare);
-         return totalFareFinal = totalFareSum;
+    if (totalFareFinal >= minimumFare) {
+        //totalFareSum > minimumFare
+        console.log(totalFareFinal + ' is greater than ' + minimumFare);
+        totalFareFinal = totalFareSum;
+        console.log(totalFareFinal);
+
     } else {
-        console.log(totalFare() + ' is less than '+ minimumFare);
-        return  totalFareFinal = minimumFare;
+        console.log(totalFareFinal + ' is less than ' + minimumFare);
+        
+        totalFareFinal = minimumFare;
+        console.log(totalFareFinal);
     }
+    return totalFareFinal;
 }
-console.log( totalFareFinal);
+
 var totalFareFinal = minFare();
-console.log( totalFareFinal);
+
 
 function rideType() {
-    //*NOTYET working if statement that returns a new value based on ride type 
-    if (carType === "normal"){
-        return totalFareFinal+ 1;
-    }
-    else { 
-        return totalFareFinal;
-    }
-}
 
-//console.log(minFare());
-
-// surge pricing - YAAY IT WORKS !!!
-// this is 2 x the normal fair during busy periods 
-function surge () {
-    SurgePeriod.addEventListener('change', function () {
-    if (this.checked) {
-        totalFareFinal = totalFare() * 2;
-            console.log('true');
+    if (document.getElementById('carType').checked) {
+        totalFareFinal += 1;
+        console.log(totalFareFinal);
         return totalFareFinal;
-        // Checkbox is checked..
     } else {
-        // Checkbox is not checked..
-        console.log('false');
         return totalFareFinal;
     }
-});
+
+
+}
+var totalFareFinal = rideType();
+console.log(rideType());
+
+// // surge pricing - CHALLENGE
+// // this is 2 x the normal fair during busy periods 
+function surge(){
+    document.getElementById('SurgePeriod').addEventListener('change', SurgeHandler);
+}
+function SurgeHandler () {
+     if (this.target>0) {
+    //     totalFareFinal = rideType()* 2;
+    //     console.log(totalFareFinal);
+    console.log ('surge is clicked');
+        
+    //     // Checkbox is checked..
+     } else {
+    //     // Checkbox is not checked..
+    //     console.log(totalFareFinal);
+    console.log('Surge is not clicked');
+    }
+    return  totalFareFinal;
 }
 
 
 
+console.log(totalFareFinal);
+var totalFareFinal = surge();
+console.log(totalFareFinal);
 
-//var totalFareFinal= surgeFare();
-// console.log(totalFareFinal);
-
-function fareAmount() {
-    document.querySelector('#fareAmount').innerText = totalFareFinal;
-}
-
-
-// // to do *********************
-// // add input fields for all possible variables that user has to add 
-// // and subsittute those variables in your function 
-// // add type of ride minimum costs. i.e. suv black van 
-// // add surge  and refine the algorithm - GO BACK TO THE USER STORY !
-// // eventually use google matrix api to calculate distances https://developers.google.com/maps/documentation/distance-matrix/intro
+// function fareAmount() {
+//     document.querySelector('#fareAmount').innerText = surge();
+// }
 
 
-function calculateAndDisplayTotalFare(){
-    // calculate total fare (without modifiers)
-    totalFare();
-    console.log(totalFareSum);
-    // check if it's below a certain value => minimumfare
-    minFare();
-    console.log(totalFareFinal);
-    
-    // apply surge
-    surge();
-    console.log(surge());
-    // apply ridetype
-    rideType();
-    console.log (rideType());
-    
-    
-    // display on the page
-    fareAmount();
-}
+// // // to do *********************
+// // // add input fields for all possible variables that user has to add 
+// // // and subsittute those variables in your function 
+// // // add type of ride minimum costs. i.e. suv black van 
+// // // add surge  and refine the algorithm - GO BACK TO THE USER STORY !
+// // // eventually use google matrix api to calculate distances https://developers.google.com/maps/documentation/distance-matrix/intro
+
+
+// function calculateAndDisplayTotalFare() {
+//     // calculate total fare (without modifiers)
+//     totalFare();
+//     console.log(totalFare());
+//     // check if it's below a certain value => minimumfare
+//     minFare();
+//     console.log(totalFareFinal);
+//     // apply surge
+//     surge();
+//     console.log( typeof surge());
+//     // apply ridetype
+//     rideType();
+//     console.log(rideType());
+
+
+//     // display on the page
+//     fareAmount();
+// }

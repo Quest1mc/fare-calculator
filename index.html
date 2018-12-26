@@ -40,15 +40,15 @@
                 Duration<input type = "number" id="RideTime"min="0"  step=".01" > <br>
                 Cost per minute <input type = "number" id= "CostPerMinute"min="0"  step=".01"  ><br>
                 Cost per mile <input type = "number" id= "CostPerMile"min="0"  step=".01"  ><br>
-                Surge Period ? <input type ="checkbox" id="SurgePeriod" > <br>
+                Surge Period ? <input type ="checkbox" id="SurgePeriod"  value = "0"> <br>
                 
-                Ride Type<input type="radio" id="cartype" value="Normal"> Normal<br>
-                Ride Type<input type="radio" id="cartype" value="Black"> Black<br>
-                Ride Type<input type="radio" id="cartype" value="XL"> XL <br>
-                Ride Type<input type="radio" id="cartype" value="VAN"> VAN<br>
-                Ride Type<input type="radio" id="cartype" value="SUV"> SUV<br>
+                Ride Type<input type="radio" class="cartype" id="carType" value="normal"> Normal<br>
+                Ride Type<input type="radio" class="cartype" value="Black"> Black<br>
+                Ride Type<input type="radio" class="cartype" value="XL"> XL <br>
+                Ride Type<input type="radio" class="cartype" value="VAN"> VAN<br>
+                Ride Type<input type="radio" class="cartype" value="SUV"> SUV<br>
                
-                <button onclick="minFare()"> submit </button>
+                <button onclick="surge()"> submit </button>
             </div>
             <!-- Javascript will insert the fare here  -->
             <h3> You have selected RideDistance , CostPerMinute, CostPerMile SurgePeriod & RideType</h3>
