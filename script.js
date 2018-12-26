@@ -54,7 +54,7 @@ function minFare() {
 
     } else {
         console.log(totalFareFinal + ' is less than ' + minimumFare);
-        
+
         totalFareFinal = minimumFare;
         console.log(totalFareFinal);
     }
@@ -65,36 +65,37 @@ var totalFareFinal = minFare();
 
 // // surge pricing - working
 // // this is 2 x the normal fair during busy periods 
-function surge(){
+function surge() {
     var SurgePeriod = document.getElementById('SurgePeriod');
-     SurgePeriod.addEventListener('change', SurgeHandler);
- }
- function SurgeHandler (totalFareFinal) {
-      if (SurgePeriod.checked) {
-        totalFareFinal = minFare()* 2;
-         console.log(totalFareFinal);
-     //console.log ('surge is clicked');
-         
-     //     // Checkbox is checked..
-      } else {
-     //     // Checkbox is not checked..
-         totalFareFinal= minFare();
-         console.log(totalFareFinal);
-     //console.log('Surge is not clicked');
-     }
-     return  totalFareFinal;
- }
- var totalFareFinal = surge();
- console.log(totalFareFinal);
+    SurgePeriod.addEventListener('change', SurgeHandler);
+}
+
+function SurgeHandler(totalFareFinal) {
+    if (SurgePeriod.checked) {
+        totalFareFinal = minFare() * 2;
+        console.log(totalFareFinal);
+        //console.log ('surge is clicked');
+
+        //     // Checkbox is checked..
+    } else {
+        //     // Checkbox is not checked..
+        totalFareFinal = minFare();
+        console.log(totalFareFinal);
+        //console.log('Surge is not clicked');
+    }
+    return totalFareFinal;
+}
+var totalFareFinal = surge();
+console.log(totalFareFinal);
 
 // RIDE TYPE NOT WORKING PROPERLY  
 // look up the proper use of radio buttons
 function rideType() {
     var CarType = document.querySelector('#cartype');
-    if (CarType.checked ==="normal") {
+    if (CarType.checked === "normal") {
         totalFareFinal += 1;
         console.log(totalFareFinal);
-        
+
     } else {
         totalFareFinal = totalFareFinal;
     }
@@ -131,15 +132,15 @@ function calculateAndDisplayTotalFare() {
     // check if it's below a certain value => minimumfare
     minFare();
     console.log(totalFareFinal);
-    
+
     // apply ridetype
     rideType();
     console.log(rideType());
     // apply surge
     surge();
-    console.log( typeof surge());
-    
-    
+    console.log(typeof surge());
+
+
     //display on the page
     fareAmount();
 }
