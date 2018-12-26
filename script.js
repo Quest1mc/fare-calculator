@@ -63,51 +63,57 @@ function minFare() {
 
 var totalFareFinal = minFare();
 
+// // surge pricing - working
+// // this is 2 x the normal fair during busy periods 
+function surge(){
+    var SurgePeriod = document.getElementById('SurgePeriod');
+     SurgePeriod.addEventListener('change', SurgeHandler);
+ }
+ function SurgeHandler (totalFareFinal) {
+      if (SurgePeriod.checked) {
+        totalFareFinal = minFare()* 2;
+         console.log(totalFareFinal);
+     //console.log ('surge is clicked');
+         
+     //     // Checkbox is checked..
+      } else {
+     //     // Checkbox is not checked..
+         totalFareFinal= minFare();
+         console.log(totalFareFinal);
+     //console.log('Surge is not clicked');
+     }
+     return  totalFareFinal;
+ }
+ var totalFareFinal = surge();
+ console.log(totalFareFinal);
 
+// RIDE TYPE NOT WORKING PROPERLY  
+// look up the proper use of radio buttons
 function rideType() {
-
-    if (document.getElementById('carType').checked) {
+    var CarType = document.querySelector('#cartype');
+    if (CarType.checked ==="normal") {
         totalFareFinal += 1;
         console.log(totalFareFinal);
-        return totalFareFinal;
+        
     } else {
-        return totalFareFinal;
+        totalFareFinal = totalFareFinal;
     }
-
+    return totalFareFinal;
 
 }
 var totalFareFinal = rideType();
 console.log(rideType());
 
-// // surge pricing - CHALLENGE
-// // this is 2 x the normal fair during busy periods 
-function surge(){
-    document.getElementById('SurgePeriod').addEventListener('change', SurgeHandler);
+
+
+
+//console.log(totalFareFinal);
+
+//console.log(totalFareFinal);
+
+function fareAmount() {
+    document.querySelector('#fareAmount').innerText = totalFareFinal;
 }
-function SurgeHandler () {
-     if (this.target>0) {
-    //     totalFareFinal = rideType()* 2;
-    //     console.log(totalFareFinal);
-    console.log ('surge is clicked');
-        
-    //     // Checkbox is checked..
-     } else {
-    //     // Checkbox is not checked..
-    //     console.log(totalFareFinal);
-    console.log('Surge is not clicked');
-    }
-    return  totalFareFinal;
-}
-
-
-
-console.log(totalFareFinal);
-var totalFareFinal = surge();
-console.log(totalFareFinal);
-
-// function fareAmount() {
-//     document.querySelector('#fareAmount').innerText = surge();
-// }
 
 
 // // // to do *********************
@@ -118,21 +124,22 @@ console.log(totalFareFinal);
 // // // eventually use google matrix api to calculate distances https://developers.google.com/maps/documentation/distance-matrix/intro
 
 
-// function calculateAndDisplayTotalFare() {
-//     // calculate total fare (without modifiers)
-//     totalFare();
-//     console.log(totalFare());
-//     // check if it's below a certain value => minimumfare
-//     minFare();
-//     console.log(totalFareFinal);
-//     // apply surge
-//     surge();
-//     console.log( typeof surge());
-//     // apply ridetype
-//     rideType();
-//     console.log(rideType());
-
-
-//     // display on the page
-//     fareAmount();
-// }
+function calculateAndDisplayTotalFare() {
+    // calculate total fare (without modifiers)
+    totalFare();
+    console.log(totalFare());
+    // check if it's below a certain value => minimumfare
+    minFare();
+    console.log(totalFareFinal);
+    
+    // apply ridetype
+    rideType();
+    console.log(rideType());
+    // apply surge
+    surge();
+    console.log( typeof surge());
+    
+    
+    //display on the page
+    fareAmount();
+}
