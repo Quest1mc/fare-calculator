@@ -6,8 +6,9 @@ h1 {
     font-size: 15vh;
     padding: 10px;
 }
+
 h2 {
-    
+
     color: white;
     margin: 0px;
     text-align: center;
@@ -22,9 +23,10 @@ h3 {
 
 body {
     margin: 0px;
-    background-color:#c4b583;
+    background-color: #c4b583;
 }
-.calc{
+
+.calc {
     margin-left: 20%;
     font-size: 30px;
     color: white;
@@ -35,11 +37,11 @@ footer {
 }
 
 h4 {
-    background-color: red; 
+    background-color: red;
 }
 
 .background-yellow {
-    background-color: #FEDC25; 
+    background-color: #FEDC25;
 }
 
 .background-blue {
@@ -76,12 +78,13 @@ h4 {
     h1 {
         font-size: 4em;
     }
+
     .answers {
         width: 100vw;
     }
 
     .card {
-        width: 90vw;    
+        width: 90vw;
         margin: 5px 0px 5px 0px;
         border-radius: 0px;
     }
@@ -93,6 +96,6 @@ h4 {
     }
 
     .card {
-        width: 30vw;    
+        width: 30vw;
     }
 }

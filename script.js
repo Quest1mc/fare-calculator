@@ -91,19 +91,21 @@ console.log(totalFareFinal);
 // RIDE TYPE NOT WORKING PROPERLY  
 // look up the proper use of radio buttons
 function rideType() {
-    var CarType = document.querySelector('#cartype');
-    if (CarType.checked === "normal") {
+    var CarType = document.querySelector('#carType');
+    if (CarType.checked) {
         totalFareFinal += 1;
+        console.log("normal is checked");
         console.log(totalFareFinal);
 
     } else {
         totalFareFinal = totalFareFinal;
+        console.log(" Something OTHER THAN normal is checked");
     }
     return totalFareFinal;
 
 }
 var totalFareFinal = rideType();
-console.log(rideType());
+console.log(totalFareFinal);
 
 
 
@@ -113,7 +115,7 @@ console.log(rideType());
 //console.log(totalFareFinal);
 
 function fareAmount() {
-    document.querySelector('#fareAmount').innerText = totalFareFinal;
+    return document.querySelector('#fareAmount').innerText = totalFareFinal;
 }
 
 
