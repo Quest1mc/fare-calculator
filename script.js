@@ -20,6 +20,9 @@ var totalFareFinal = 0;
 
 
 
+document.getElementById('SurgePeriod').addEventListener('change', totalFare);
+Array.from(document.getElementsByClassName('inputField')).map(field=>field.addEventListener('change', totalFare));
+Array.from(document.querySelectorAll(".cartype")).map(radio=>radio.addEventListener('change', totalFare));
 
 function totalFare() {
     var base = parseFloat(document.getElementById('Base').value);
@@ -28,84 +31,85 @@ function totalFare() {
     var bookingFee = 1;
     var rideTime = parseFloat(document.getElementById('RideTime').value);
     var rideDistance = parseFloat(document.getElementById('RideDistance').value);
-
-
-    // console.log(typeof base, typeof costPerMile, typeof costPerMinute, typeof rideDistance, typeof rideTime)
-
     var totalFareSum = (base + (costPerMinute * rideTime) + (costPerMile * rideDistance) + bookingFee);
-    console.log(typeof totalFareSum); // number
-    console.log(totalFareSum);
-
-    return totalFareSum;
+    console.log("totalFareSum is" + totalFareSum);
+    if(totalFareSum <=4){totalFareSum=4;}
+    if (document.querySelector('#carType').checked) {totalFareSum += 1;}
+    if (document.getElementById('SurgePeriod').checked) {totalFareSum  *= 2;}
+    console.log(totalFareSum)
+    document.querySelector('#fareAmount').innerText = totalFareSum;
+    document.querySelector('#description').innnerText = 'You have selected  + rideDistance CostPerMinute CostPerMile SurgePeriod;  RideType';
 }
 
-var totalFareSum = totalFare();
+// var totalFareFinal = totalFare()
+// console.log("tatalFareFinal is"+totalFareFinal);
 
+//var totalFareFinal = 0;
 
-var totalFareFinal = 0;
+// function minFare() {
 
-function minFare() {
+//     var totalFareFinal = totalFare();
+//     if (totalFare() >= minimumFare) {
+//         //totalFareSum > minimumFare
+//         console.log(totalFare() + ' is greater than ' + minimumFare);
+//         // console.log(totalFareFinal);
+//         return totalFareFinal;
 
-    if (totalFareFinal >= minimumFare) {
-        //totalFareSum > minimumFare
-        console.log(totalFareFinal + ' is greater than ' + minimumFare);
-        totalFareFinal = totalFareSum;
-        console.log(totalFareFinal);
+//     } else {
+//         console.log(totalFareFinal + ' is less than ' + minimumFare);
+//         totalFareFinal = minimumFare;
+//         // console.log(totalFareFinal);
+//         return totalFareFinal;
+//     }
+// }
 
-    } else {
-        console.log(totalFareFinal + ' is less than ' + minimumFare);
+// function rideType() {
+//     var CarType = document.querySelector('#carType');
+//     if (CarType.checked) {
+//         totalFareFinal += 1;
+//         // console.log("normal is checked");
+//         // console.log(totalFareFinal);
 
-        totalFareFinal = minimumFare;
-        console.log(totalFareFinal);
-    }
-    return totalFareFinal;
-}
+//     } else {
+//         totalFareFinal = totalFareFinal;
+//         // console.log(" Something OTHER THAN normal is checked");
+//     }
+//     return totalFareFinal;
 
-var totalFareFinal = minFare();
+// }
+// var totalFareFinal = rideType();
+// console.log(totalFareFinal);
+
+// var totalFareFinal = minFare();
 
 // // surge pricing - working
 // // this is 2 x the normal fair during busy periods 
-function surge() {
-    var SurgePeriod = document.getElementById('SurgePeriod');
-    SurgePeriod.addEventListener('change', SurgeHandler);
-}
+// function surge() {
+//     var SurgePeriod = document.getElementById('SurgePeriod');
+//     SurgePeriod.addEventListener('change', SurgeHandler);
+// }
 
-function SurgeHandler(totalFareFinal) {
-    if (SurgePeriod.checked) {
-        totalFareFinal = minFare() * 2;
-        console.log(totalFareFinal);
-        //console.log ('surge is clicked');
+// function SurgeHandler(totalFareFinal) {
+//     if (SurgePeriod.checked) {
+//         totalFareFinal = minFare() * 2;
+//         console.log(totalFareFinal);
+//         //console.log ('surge is clicked');
 
-        //     // Checkbox is checked..
-    } else {
-        //     // Checkbox is not checked..
-        totalFareFinal = minFare();
-        console.log(totalFareFinal);
-        //console.log('Surge is not clicked');
-    }
-    return totalFareFinal;
-}
-var totalFareFinal = surge();
-console.log(totalFareFinal);
+//         //     // Checkbox is checked..
+//     } else {
+//         //     // Checkbox is not checked..
+//         totalFareFinal = minFare();
+//         console.log(totalFareFinal);
+//         //console.log('Surge is not clicked');
+//     }
+//     return totalFareFinal;
+// }
+// var totalFareFinal = surge();
+// console.log(totalFareFinal);
 
 // RIDE TYPE NOT WORKING PROPERLY  
 // look up the proper use of radio buttons
-function rideType() {
-    var CarType = document.querySelector('#carType');
-    if (CarType.checked) {
-        totalFareFinal += 1;
-        console.log("normal is checked");
-        console.log(totalFareFinal);
 
-    } else {
-        totalFareFinal = totalFareFinal;
-        console.log(" Something OTHER THAN normal is checked");
-    }
-    return totalFareFinal;
-
-}
-var totalFareFinal = rideType();
-console.log(totalFareFinal);
 
 
 
@@ -114,9 +118,9 @@ console.log(totalFareFinal);
 
 //console.log(totalFareFinal);
 
-function fareAmount() {
-    return document.querySelector('#fareAmount').innerText = totalFareFinal;
-}
+// function fareAmount() {
+//     return document.querySelector('#fareAmount').innerText = totalFareFinal;
+// }
 
 
 // // // to do *********************
@@ -127,22 +131,25 @@ function fareAmount() {
 // // // eventually use google matrix api to calculate distances https://developers.google.com/maps/documentation/distance-matrix/intro
 
 
-function calculateAndDisplayTotalFare() {
-    // calculate total fare (without modifiers)
-    totalFare();
-    console.log(totalFare());
-    // check if it's below a certain value => minimumfare
-    minFare();
-    console.log(totalFareFinal);
+// function calculateAndDisplayTotalFare() {
+//     // calculate total fare (without modifiers)
+//     totalFare();
+//     // console.log(totalFare());
+//     // check if it's below a certain value => minimumfare
+//     //var totalFareFinal = totalFare();
 
-    // apply ridetype
-    rideType();
-    console.log(rideType());
-    // apply surge
-    surge();
-    console.log(typeof surge());
+   
+//     minFare();
+//     // console.log(totalFareFinal);
+    
+//     // apply ridetype
+//     rideType();
+//     // console.log(rideType());
+//     // apply surge
+//     surge();
+//     console.log();
 
 
-    //display on the page
-    fareAmount();
-}
+//     //display on the page
+//     fareAmount();
+// }

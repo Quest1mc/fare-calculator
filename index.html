@@ -39,26 +39,28 @@
     <!-- This is where the parameters of the algorithym will be inserted  -->
     <div class="calc">
         <p>Please put in what you know about your ride to the best of your knowledge </p>
-        Base <input type="number" id="Base" min="0" step=".01"><br>
-        Distance in miles<input type="number" id="RideDistance" min="0" step=".01"><br>
-        Duration<input type="number" id="RideTime" min="0" step=".01"> <br>
-        Cost per minute <input type="number" id="CostPerMinute" min="0" step=".01"><br>
-        Cost per mile <input type="number" id="CostPerMile" min="0" step=".01"><br>
+        Base <input type="number" id="Base" min="0" step=".01" class="inputField" value="0"><br>
+        Distance in miles<input type="number" id="RideDistance" min="0" step=".01" class="inputField" value="0"><br>
+        Duration<input type="number" id="RideTime" min="0" step=".01" class="inputField" value="0"> <br>
+        Cost per minute <input type="number" id="CostPerMinute" min="0" step=".01" class="inputField" value="0"><br>
+        Cost per mile <input type="number" id="CostPerMile" min="0" step=".01" class="inputField" value="0"><br>
+        
+
+        Ride Type<input type="radio" name="carOptions" onchange="totalFare()" class="cartype" id="carType" value="normal"> Normal<br>
+        Ride Type<input type="radio" name="carOptions" onchange="totalFare()" class="cartype" value="Black"> Black<br>
+        Ride Type<input type="radio" name="carOptions" class="cartype" id="XL"value="XL"> XL <br>
+        Ride Type<input type="radio" name="carOptions" class="cartype" value="VAN"> VAN<br>
+        Ride Type<input type="radio" name="carOptions" class="cartype" value="SUV"> SUV<br>
+
         Surge Period ? <input type="checkbox" id="SurgePeriod" value="0"> <br>
 
-        Ride Type<input type="radio" class="cartype" id="carType" value="normal"> Normal<br>
-        Ride Type<input type="radio" class="cartype" value="Black"> Black<br>
-        Ride Type<input type="radio" class="cartype" value="XL"> XL <br>
-        Ride Type<input type="radio" class="cartype" value="VAN"> VAN<br>
-        Ride Type<input type="radio" class="cartype" value="SUV"> SUV<br>
-
-        <button onclick="calculateAndDisplayTotalFare()"> submit </button>
+        <button onclick="totalFare()"> submit </button>
     </div>
     <!-- Javascript will insert the fare here  -->
-    <h3> You have selected RideDistance , CostPerMinute, CostPerMile SurgePeriod & RideType</h3>
+    <h3 id = 'description'> You have selected RideDistance , CostPerMinute, CostPerMile SurgePeriod & RideType</h3>
     <h2> Your Fare is </h2>
     <h2 id="fareAmount"> 00.00</h2>
-
+    You have selected RideDistance , CostPerMinute, CostPerMile SurgePeriod & RideType
     <script src="script.js"></script>
 </body>
 
