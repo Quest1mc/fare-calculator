@@ -20,9 +20,9 @@ var totalFareFinal = 0;
 
 
 
-document.getElementById('SurgePeriod').addEventListener('change', totalFare);
-Array.from(document.getElementsByClassName('inputField')).map(field=>field.addEventListener('change', totalFare));
-Array.from(document.querySelectorAll(".cartype")).map(radio=>radio.addEventListener('change', totalFare));
+// document.getElementById('SurgePeriod').addEventListener('change', totalFare);
+// Array.from(document.getElementsByClassName('inputField')).map(field=>field.addEventListener('change', totalFare));
+// Array.from(document.querySelectorAll(".cartype")).map(radio=>radio.addEventListener('change', totalFare));
 
 function totalFare() {
     var base = parseFloat(document.getElementById('Base').value);
