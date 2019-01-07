@@ -36,7 +36,7 @@ function totalFare() {
     if(totalFareSum <=4){totalFareSum=4;}
     if (document.querySelector('#carType').checked) {totalFareSum += 1;}
     if (document.getElementById('SurgePeriod').checked) {totalFareSum  *= 2;}
-    console.log(totalFareSum)
+    console.log(totalFareSum);
     document.querySelector('#fareAmount').innerText = totalFareSum;
     document.querySelector('#description').innnerText = 'You have selected  + rideDistance CostPerMinute CostPerMile SurgePeriod;  RideType';
 }

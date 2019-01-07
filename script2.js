@@ -56,6 +56,10 @@ function calculateSurge(fare, surgeActive){
 
 console.log(calculateSurge(11, false))
 
+function inputFareAmount(fare) {
+    return document.querySelector('#fareAmount').innerText = fare;
+}
+
 function fareCalculator(){
     const timeInRide = parseFloat(document.getElementById('RideTime').value)
     const rideDistance = parseFloat(document.getElementById('RideDistance').value)
@@ -64,8 +68,9 @@ function fareCalculator(){
     const baseFare = calculateBaseFare(timeInRide, rideDistance) // pass in timeInRide and rideDistance as arguments
     const surgeFare = calculateSurge(baseFare, surgeActive)
     const finalFare = calculateMinFare(surgeFare)
+    const fareAmount = inputFareAmount(finalFare)
     console.log(finalFare)
-    return finalFare
+    return fareAmount
 }
 
 // todo: 

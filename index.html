@@ -46,8 +46,8 @@
         Cost per mile <input type="number" id="CostPerMile" min="0" step=".01" class="inputField" value="0"><br>
         
 
-        Ride Type<input type="radio" name="carOptions" onchange="totalFare()" class="cartype" id="carType" value="normal"> Normal<br>
-        Ride Type<input type="radio" name="carOptions" onchange="totalFare()" class="cartype" value="Black"> Black<br>
+        Ride Type<input type="radio" name="carOptions" onchange="fareCalculator()" class="cartype" id="carType" value="normal"> Normal<br>
+        Ride Type<input type="radio" name="carOptions" onchange="fareCalculator()" class="cartype" value="Black"> Black<br>
         Ride Type<input type="radio" name="carOptions" class="cartype" id="XL"value="XL"> XL <br>
         Ride Type<input type="radio" name="carOptions" class="cartype" value="VAN"> VAN<br>
         Ride Type<input type="radio" name="carOptions" class="cartype" value="SUV"> SUV<br>
@@ -61,7 +61,7 @@
     <h2> Your Fare is </h2>
     <h2 id="fareAmount"> 00.00</h2>
     You have selected RideDistance , CostPerMinute, CostPerMile SurgePeriod & RideType
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script src="script2.js"></script>
 </body>
 
