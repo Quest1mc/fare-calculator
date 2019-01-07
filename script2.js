@@ -28,29 +28,29 @@ const MIN_FARE_EURO = 4
 const SURGE_MULTIPLIER = 2
 
 
-function calculateBaseFare(time, distance){ // parameters (placeholders)
+function calculateBaseFare(time, distance) { // parameters (placeholders)
     const baseFare = BASE_FARE_EURO
-    const bookingFee = BOOKING_FEE_EURO 
+    const bookingFee = BOOKING_FEE_EURO
     const costPerMinute = COST_PER_MINUTE_EURO
     const costPerMile = COST_PER_MILE_EURO
 
-    return baseFare + ( costPerMinute * time ) + ( costPerMile * distance ) + bookingFee
+    return baseFare + (costPerMinute * time) + (costPerMile * distance) + bookingFee
 }
 
-function calculateMinFare(fare){ // number
+function calculateMinFare(fare) { // number
     const minFare = MIN_FARE_EURO
     if (fare >= minFare) {
         return fare
     }
-    
+
     return minFare
 }
 
-function calculateSurge(fare, surgeActive){
+function calculateSurge(fare, surgeActive) {
     const surgeMultiplier = SURGE_MULTIPLIER
-    if(surgeActive === true){
+    if (surgeActive === true) {
         return fare * surgeMultiplier
-    } 
+    }
     return fare
 }
 
@@ -60,7 +60,7 @@ function inputFareAmount(fare) {
     return document.querySelector('#fareAmount').innerText = fare;
 }
 
-function fareCalculator(){
+function fareCalculator() {
     const timeInRide = parseFloat(document.getElementById('RideTime').value)
     const rideDistance = parseFloat(document.getElementById('RideDistance').value)
     const surgeActive = document.getElementById('SurgePeriod').checked
@@ -77,5 +77,4 @@ function fareCalculator(){
 // surge
 // ridetype
 // console.log(fareCalculator())
-
-
+// added inputfareAmount function
