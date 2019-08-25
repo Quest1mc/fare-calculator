@@ -2,7 +2,7 @@
 This was built in JavaScript & HTML with minimal CSS
 Mostly to show off Javascript and logic applied to solving a problem.
 
-![alt text](https://github.com/Quest1mc/fare-calulator/blob/master/Screenshot-Farecalculator.png "Screenshot FareCalulator SPA")
+![alt text](https://github.com/Quest1mc/fare-calculator/blob/master/Screenshot-Farecalculator.png "Screenshot-FareCalulator- SPA")
 
 
 Your Uber fare is first calculated on 4 main criteria:
