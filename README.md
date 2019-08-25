@@ -1,3 +1,10 @@
+
+This was built in JavaScript & HTML with minimal CSS
+Mostly to show off Javascript and logic applied to solving a problem.
+
+![alt text](https://github.com/Quest1mc/fare-calulator/blob/master/Screenshot-Farecalculator.png "Screenshot FareCalulator SPA")
+
+
 Your Uber fare is first calculated on 4 main criteria:
     • Base (or initial) fare – A flat fee charged at the beginning of every ride
     • Cost per minute – How much you are charged for each minute you are inside the ride
