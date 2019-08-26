@@ -1,5 +1,6 @@
 
 This was built in JavaScript & HTML with minimal CSS
+Almost a year ago
 Mostly to show off Javascript and logic applied to solving a problem.
 
 ![alt text](https://github.com/Quest1mc/fare-calculator/blob/master/Screenshot-Farecalculator.png "Screenshot-FareCalulator- SPA")
